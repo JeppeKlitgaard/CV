@@ -1,0 +1,9 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "lualatex (no bibtex)",
+      "tools": ["lualatex"]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "lualatex (no bibtex)"
+}
