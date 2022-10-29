@@ -1,0 +1,3 @@
+[submodule "vendored/DevIconsLatex"]
+	path = vendored/DevIconsLatex
+	url = git@github.com:JeppeKlitgaard/DevIconsLatex.git
