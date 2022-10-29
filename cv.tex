@@ -1,0 +1,512 @@
+% !TEX program = xelatex
+
+% Also works with luatex, but not pdftex
+
+%! CV - Jeppe Klitgaard
+%! Last updated: 2020-07-11
+
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors:
+% https://github.com/PandaScience/FortySecondsCV/graphs/contributors
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% 9pt,
+	% sidesectionsize=Large,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sidetextcolor=green,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+	% sidebarplacement=right,
+]{fortysecondscv}
+
+% fine tune line spacing
+% \usepackage{setspace}
+% \setstretch{1.1}
+
+% Ignore underful hbox warnings
+\hbadness=10000
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{xspace}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+% ! Actually when using devicons we require luatex/XeTeX
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
+
+% % Extra font
+% % ! Requires devicons to be installed. See: github.com/JeppeKlitgaard/DevIconsLatex
+\usepackage{devicons}
+\usepackage{adjustbox}
+
+% use a sans serif font as default
+\usepackage[sfdefault]{ClearSans}
+% \usepackage[sfdefault]{noto}
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% Ordinals
+\usepackage{fmtcount}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+% Functions
+\newcommand{\cvsectionvspace}{\vspace{-1.5em}}
+\newcommand{\cvsubsectionvspace}{\vspace{-1.0em}}
+\newcommand{\signature}{
+	\includegraphics[height=1.0cm]{pics/signature.png}
+}
+
+
+
+\newcommand{\link}[2]{%
+	{\href{#1}{\textcolor{maincolor!70}{\textbf{#2} \scriptsize{\faLink}}}}%
+}
+
+\newcommand{\urlfor}[1]{%
+	https://jeppe.science/profile/#1%
+}
+
+\newcommand{\cvitemshortbigkey}[2]{%
+	\parbox[t]{0.40\textwidth}{\raggedright #1}
+	& \parbox[t]{0.59\textwidth}{#2} \\}
+
+\renewcommand{\cvsignature}{
+	\vfill
+	{\large\bfseries\color{maincolor!70}\today \hfill \signature \hfill \cvname}
+}
+
+% Macros
+\newcommand{\pdf}{\faFilePdf[regular]\xspace}
+\newcommand{\cvitemlinkpdf}[2]{\cvitemshortbigkey{#1}{\link{\urlfor{documents/#2}}{\pdf #2}}}
+
+\newcommand{\deviconlogo}[1]{\adjustbox{trim = 5pt 0 0 0}{\large{#1}}}
+\newcommand{\devicontext}[1]{\raisebox{0.2\height}{#1}}
+\newcommand{\dipointskill}[3]{\pointskill{\deviconlogo{#1}}{\devicontext{#2}}{#3}}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Jeppe Klitgaard}
+% job title/career
+\cvjobtitle{Bachelor of Science,\\[0.2em] Physical Natural Sciences}
+
+%% optional information
+% profile picture
+\cvprofilepic{pics/profile.jpg}
+% logo picture
+%\cvlogopic{pics/logo_txt.png}
+
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/shiny/}}
+
+	\vspace{-1.5em}
+
+	\begin{icontable}[2.0]{1.7em}{0.7em}
+	 	\personal{\faCalendar}{February \ordinalnum{6}, 1997}
+		\personal{\faMapMarker}{Hughes Hall, Cambridge, UK}
+		\personal{\faGlobe}{\href{https://jeppe.science/}{jeppe.science}}
+		\personal{\faPhone}{\href{tel:+45-22-46-13-58}{\flag{DK.png} +45 22 46 13 58}}
+		\personal{\faPhone}{\href{tel:+44-77-4896-6913}{\flag{GB.png} +44 77 4896 6913}}
+		\personal{\faAt}{\href{mailto:hi@jeppe.science}{hi@jeppe.science}}
+	\end{icontable}
+
+	% social network accounts incl. proper hyperlinks
+	\sidesection{Social Network}
+		\begin{icontable}[2.0]{2.5em}{1em}
+			\social{\faLinkedin}
+				{https://www.linkedin.com/in/JeppeKlitgaard}
+				{Jeppe Klitgaard}
+			\social{\faGithub}
+				{https://github.com/JeppeKlitgaard}
+				{JeppeKlitgaard}
+		\end{icontable}
+
+	\sidesection{Languages}
+		\pointskill{\flag{DK.png}}{Danish}{5}
+		\pointskill{\flag{GB.png}}{English}{5}
+		\pointskill{\flag{DE.png}}{German}{2}
+
+	\sidesection{Hard Skills}
+		\skill{\faPython}{Programming}
+		\skill{\faChartBar}{Data Science}
+		\skill{\faAtom}{Physics}
+		\skill{\faCalculator}{Mathematics}
+		\skill{\faBolt}{Electronics}
+
+
+	\sidesection{Soft Skills}
+		\skill{\faBug}{Problem solving}
+		\skill{\faUsers}{Teamwork}
+		\skill{\faCheck}{Dependability}
+		\skill{\faComments}{Earnestness}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+%	\sidesection{About Me}
+%	\aboutme{
+%		The giant panda is a terrestrial animal and primarily spends its life
+%		roaming and feeding in the bamboo forests of the Qinling Mountains and in
+%		the hilly province of Sichuan.
+%	}
+
+	\sidesection{Programming}
+		\dipointskill{\diPythonPlain}{Python 3}{5}
+
+		\dipointskill{\diLinuxPlain}{Linux}{4}
+		\dipointskill{\diBashPlain}{bash/zsh/fish}{4}
+
+		\pointskill{\faRobot}{Machine Learning}{3}
+		\pointskill{\faDatabase}{SQL}{3}
+
+		\dipointskill{\diCplusplusPlain}{C++}{3}
+		\dipointskill{\diCPlain}{C}{2}
+
+		\dipointskill{\diTypescriptPlain}{TypeScript}{3}
+		\dipointskill{\diJavascriptPlain}{JavaScript}{3}
+
+		\dipointskill{\diCssPlain}{CSS3}{3}
+		\dipointskill{\diHtmlPlain}{HTML5}{3}
+
+
+	\sidesection{Technologies}
+	\begin{sidebarminipage}
+		\chartlabel{Matplotlib}
+		\chartlabel{Faust}
+		\chartlabel{Async}
+		\chartlabel{Django}
+		\chartlabel{Jupyter}
+		\chartlabel{Mkdocs}
+		\chartlabel{FastAPI}
+		\chartlabel{REST}
+		\chartlabel{Scrapy}
+		\chartlabel{Apache Kafka}
+		\chartlabel{Docker}
+		\chartlabel{Pandas}
+		\chartlabel{Scipy}
+		\chartlabel{Numpy}
+		\chartlabel{LMFIT}
+		\chartlabel{*NIX}
+		\chartlabel{Debian}
+		\chartlabel{Git}
+		\chartlabel{LaTeX}
+		\chartlabel{Eigen3}
+		\chartlabel{PyTorch}
+		\chartlabel{Arduino}
+		\chartlabel{PlatformIO}
+		\chartlabel{Serial}
+		\chartlabel{Tensorboard}
+		\chartlabel{stable-baselines3}
+		\chartlabel{PettingZoo}
+		\chartlabel{Jsonnet}
+		\chartlabel{Traefik 2}
+		\chartlabel{MathJax 3}
+		\chartlabel{Unicode}
+	\end{sidebarminipage}
+
+%	\begin{figure}\centering
+%		\smartdiagram[bubble diagram]{
+%			\textcolor{white}{\textbf{Being a}} \\
+%			\textcolor{white}{\textbf{Panda}}, % center bubble
+%			\textcolor{black!90}{Eating},
+%			\textcolor{black!90}{Sleeping},
+%			\textcolor{black!90}{Rolling},
+%			\textcolor{black!90}{Playing},
+%			\textcolor{black!90}{Chilling}
+%		}
+%	\end{figure}
+
+%	\chartlabel{Wheel Chart}
+%
+%	\wheelchart{3.7em}{2em}{%
+%	20/3em/maincolor!50/Chill,
+%	15/3em/maincolor!15/Play,
+%	30/4em/maincolor!40/Sleep,
+%	20/3em/maincolor!20/Eat
+%	}
+%
+%	\sidesection{Barskills}
+%	\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+%	\barskill{\faImage}{Playing Chess}{30}
+%	\barskill{\faMusic}{Playing the bamboo flute}{50}
+
+%	\sidesection{Memberships}
+%	\begin{memberships}
+%		\membership[4em]{pics/logo.png}{PandaScience.net}
+%		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
+%			only one line}
+%	\end{memberships}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Introduction}
+Ambitious student with interests in Natural, Computer \& Data Sciences, as well as Society \& Culture.\\
+
+I have a teachable and well rounded profile with experience in organisational,
+technical, and academic work
+through a variety of activities including political work,
+Advisory Board of Denmark's Academy of Talented Youth,
+the European CanSat Competition \&
+internships within FinTech and academia.
+
+\cvsection{Work Experience}
+\cvsectionvspace
+\begin{cvtable}[3]
+	\cvitem{2022 --}{Research and Development}{NanoNord}{
+		Research pertaining to Nuclear Magnetic Resonance applied to the \link{http://www.nanonord.dk/}{Tveskaeg} system.
+	}
+
+	\cvitem{2021}{Research Intern}{University of Cambridge}{
+		10-week summer internship with  \link{https://www.phy.cam.ac.uk/directory/cicuta}{Prof.\@ Pietro Cicuta} and  \link{https://www.cl.cam.ac.uk/~pl219/}{Prof.\@ Pietro Liò} at University of Cambridge.\\
+		Developed and designed \link{https://jeppeklitgaard.github.io/CartER/}{CartER},
+		an open-source and open-hardware physical and simulated cartpole platform
+		for experimentation and investigation of reinforcement learning algorithms.
+	}
+
+	\cvitem{2020}{Software Engineering Intern}{Intropic Limited}{
+		8-week summer internship in a London-based FinTech startup.\\
+		Introduced and authored a variety of Python projects dealing with REST API development,
+		data processing and created a streaming data pipeline in Kafka/Faust.
+	}
+
+	\cvitem{Jan. 2018 -- Sep. 2019}{Substitute Teacher}{Ans \& Grauballe Skole}{
+		Fixed temporary position in Ans Skole's Special Education section.\\
+		Also worked as a regular substitute teacher in the public school section.
+		Primarily taught STEM and English, ages 13 -- 16.
+	}
+
+	\cvitem{2016 -- 2019}{Language Camp Organiser and Teacher}{Rejsby Europæiske Efterskole}{
+		% Helped organise the annual Language Camp at Rejsby Europæiske
+		% Efterskole for 4 consecutive years.
+	}
+\end{cvtable}
+
+\cvsection{Education}
+\cvsubsection{Higher Education}
+\cvsubsectionvspace
+\begin{cvtable}[2.0]
+	\cvitem{2019 -- 2022}{BA Natural Sciences}{University of Cambridge, UK}{
+		Bachelor of Science in Physical Natural Sciences with subject choices being Physics and Mathematics.\\
+		Student Representative at Cavendish Laboratory (years 1 -- 3).
+	}
+\end{cvtable}
+
+\cvsubsection{Secondary Education}
+\cvsubsectionvspace
+\begin{cvtable}[2.0]
+	\cvitem{2014 -- 2017}{Danish STX}{Silkeborg Gymnasium, Denmark}{
+		Studentereksamen (STX) with Physics A, Chemistry A, Mathematics A.\\
+		Master Classes in Mathematics, Physics, and Chemistry. Part of the CanSat competition team.\\
+		GPA:\@ 12.2 / 12.0 (extra credit).
+	}
+	\cvitem{2014 -- 2017}{Academy of Talented Youth}{Denmark}{
+		Extracurricular organisation providing advanced classes, lectures,
+		and camps for academically gifted students in collaboration with universities
+		and leading companies.\\
+		\\
+		Elected as Student Representative for the Advisory Board of Academy of Talented Youth, where I
+		represented roughly 200 of the region's most talented students and helped set out new initiatives
+		for the organisation.
+	}
+\end{cvtable}
+
+\newpage
+\makebacksidebar
+% \newgeometry{
+% 	top=\topbottommargin,
+% 	bottom=\topbottommargin,
+% 	right=\leftrightmargin,
+% 	left=\leftrightmargin
+% }
+
+\cvsection{Awards}
+\cvsubsectionvspace
+\begin{cvtable}[2.0]
+	\cvitem{2021}{\ordinalnum{1} place in Research Skills Presentation}{Dept. Physics, Cambridge}{}
+	\cvitem{2017}{Recognition of Extraordinary Community Effort}{Silkeborg Gymnasium, Board}{}
+	\cvitem{2017}{Recognition of Extraordinary Academic Achievement}{Silkeborg Gymnasium, Board}{}
+	\cvitem{2015}{\ordinalnum{3} place at European CanSat Competition}{European Space Agency}{}
+\end{cvtable}
+
+\cvsection{Other Certifications}
+\cvsubsectionvspace
+\begin{cvtable}[2.0]
+	\cvitem{2014}{IGSCE - English As A Second Language}{Cambridge Examinations}{A*(a*) grade}
+\end{cvtable}
+
+\cvsection{Association and Voluntary Work}
+\cvsectionvspace
+\begin{cvtable}[3]
+	\cvitem{2018 --}{Board Member and Senior Advisor of Projects and Operations}{Nordic Study Abroad Community}{
+		Organiser 2018 -- 2019, Director 2019 -- 2021, Senior Advisor and Member of the Board 2021 onwards.\\
+		Working with website development, internal IT setup and organisation of the annual Nordic Study Abroad Conference.
+	}
+
+	\cvitem{2015}{Senior Mentor}{The Science Club, Royal Danish Academy of Sciences}{
+		Taught primatology to school children in collaboration with Aarhus University
+	}
+
+	\cvitem{2014 -- 2016}{Youth Politician}{Social-Liberal Youth Party of Denmark}{
+		Active board member in the local organisation. Elected as representative to the National Executive
+		of the Social-Liberal Youth Party of Denmark.
+	}
+\end{cvtable}
+
+
+\cvsection{References}
+\cvsubsectionvspace
+\begin{cvtable}[2.0]
+	\cvitem{2021}{Research Intern}{University of Cambridge}{
+		Letter of recommendation available upon request.
+	}
+
+	\cvitem{2020}{Software Engineering Intern}{Intropic Limited}{
+		Letter of recommendation available here: \link{\urlfor{references/intropic.pdf}}{\pdf intropic.pdf}.
+	}
+
+	\cvitem{2018}{Teacher}{Ans Skole}{
+		Letter of recommendation available here: \link{\urlfor{references/ans_skole.pdf}}{\pdf ans\_skole.pdf}.
+	}
+
+\end{cvtable}
+
+\cvsection{Other Documents}
+\cvsubsectionvspace
+\begin{cvtable}[1.8]
+	\cvitemlinkpdf{Academy of Talented Youth}{diploma\_academy\_talented\_youth.pdf}
+	\cvitemlinkpdf{Cambridge Examinations}{diploma\_IGCSE\_english.pdf}
+	\cvitemlinkpdf{European Space Agency}{diploma\_cansats\_in\_europe.pdf}
+	\cvitemlinkpdf{Royal Danish Academy of Sciences}{diploma\_science\_club.pdf}
+	\cvitemlinkpdf{Silkeborg Gymnasium}{award\_community\_effort.pdf}
+	\cvitemlinkpdf{Silkeborg Gymnasium}{diploma\_highschool.pdf}
+	\cvitemlinkpdf{Silkeborg Gymnasium}{diploma\_masterclass\_phys\_chem.pdf}
+\end{cvtable}
+
+%\cvsection{cvitem}
+%\cvsubsection{Multi-line with longer description}
+%\begin{cvtable}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%\end{cvtable}
+%
+%\cvsubsection{One-line without description}
+%\begin{cvtable}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%\end{cvtable}
+%
+%\cvsection{cvitemshort}
+%\cvsubsection{One-line}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%\end{cvtable}
+%
+%\cvsubsection{Multi-line with longer description}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%\end{cvtable}
+%
+%\cvsection{cvpubitem}
+%\begin{cvtable}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title that is spanning over multiple lines and still
+%		does not look too bad}{Authors}{Journal}{Year}
+%\end{cvtable}
+
+\cvsignature
+
+\end{document}
