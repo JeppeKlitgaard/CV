@@ -76,9 +76,12 @@
 \defaultfontfeatures{Ligatures=TeX}
 % \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
 
-% % Extra font
+\usepackage{silence}
+% Disable warning due to relative path import of devicons
+\WarningFilter{latex}{You have requested package}
 % % ! Requires devicons to be installed. See: github.com/JeppeKlitgaard/DevIconsLatex
 \usepackage{vendored/DevIconsLatex/devicons}
+
 \usepackage{adjustbox}
 
 % use a sans serif font as default
