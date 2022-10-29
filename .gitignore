@@ -1,1 +1,8 @@
 cv.pdf
+
+# Tex stuff
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
