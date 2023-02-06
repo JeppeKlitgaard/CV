@@ -124,6 +124,9 @@
 
 \newcommand{\link}[2]{%
 	{\href{#1}{\textcolor{maincolor!70}{\textbf{#2} \scriptsize{\faLink}}}}%
+	}
+\newcommand{\linknoicon}[2]{%
+	{\href{#1}{\textcolor{maincolor!70}{\textbf{#2}}}}%
 }
 
 \newcommand{\urlfor}[1]{%
@@ -316,26 +319,37 @@ internships within FinTech, academia, and industry.
 \begin{cvtable}[2.0]
 	}
 
-	\cvitem{2021}{Research Intern}{University of Cambridge}{
-		10-week summer internship with  \link{https://www.phy.cam.ac.uk/directory/cicuta}{Prof.\@ Pietro Cicuta} and  \link{https://www.cl.cam.ac.uk/~pl219/}{Prof.\@ Pietro Liò} at University of Cambridge.\\
+	\cvitem{2021}
+	{Research Intern}
+	{\linknoicon{https://www.cam.ac.uk/}{University of Cambridge}}
+	{
+		10-week summer internship with  \link{https://www.phy.cam.ac.uk/directory/cicuta}{Prof.\@ Pietro Cicuta}
+		and \link{https://www.cl.cam.ac.uk/~pl219/}{Prof.\@ Pietro Liò} at University of Cambridge.\\
 		Developed and designed \link{https://jeppeklitgaard.github.io/CartER/}{CartER},
 		an open-source and open-hardware physical and simulated cartpole platform
 		for experimentation and investigation of reinforcement learning algorithms.
 	}
 
-	\cvitem{2020}{Software Engineering Intern}{Intropic Limited}{
+	\cvitem{2020}
+	{Software Engineering Intern}
+	{\linknoicon{https://intropic.io/}{Intropic Limited}}
+	{
 		8-week summer internship in a London-based FinTech startup.\\
 		Introduced and authored a variety of Python projects dealing with REST API development,
 		data processing and created a streaming data pipeline in Kafka/Faust.
 	}
 
-	\cvitem{Jan. 2018 -- Sep. 2019}{Substitute Teacher}{Ans \& Grauballe Skole}{
+	\cvitem{Jan. 2018 -- Sep. 2019}
+	{Substitute Teacher}
+	{\linknoicon{https://ansskole.aula.dk/}{Ans} \& \linknoicon{https://grauballe-skole.aula.dk/}{Grauballe} Skole}{
 		Fixed temporary position in Ans Skole's Special Education section.\\
 		Also worked as a regular substitute teacher in the public school section.
 		Primarily taught STEM and English, ages 13 -- 16.
 	}
 
-	\cvitem{2016 -- 2019}{Language Camp Organiser and Teacher}{Rejsby Europæiske Efterskole}{
+	\cvitem{2016 -- 2019}
+	{Language Camp Organiser and Teacher}
+	{\linknoicon{https://www.rejsby-efterskole.dk/}{Rejsby Europæiske Efterskole}}{
 		% Helped organise the annual Language Camp at Rejsby Europæiske
 		% Efterskole for 4 consecutive years.
 	}
@@ -346,6 +360,10 @@ internships within FinTech, academia, and industry.
 \cvsubsection{Higher Education}
 \cvsubsectionvspace
 \begin{cvtable}[1.6]
+	\cvitem{2019 -- 2022}
+	{\linknoicon{https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences}{BA (Hons) Natural Sciences}}
+	{\linknoicon{https://www.cam.ac.uk/}{University of Cambridge}, UK}
+	{
 		Bachelor of Science in Physical Natural Sciences with subject choices being Physics and Mathematics.\\
 		Student Representative at Cavendish Laboratory (years 1 -- 3).
 	}
@@ -354,17 +372,23 @@ internships within FinTech, academia, and industry.
 \cvsubsection{Secondary Education}
 \cvsubsectionvspace
 \begin{cvtable}[1.6]
+	\cvitem{2014 -- 2017}
+	{Danish STX}
+	{\linknoicon{https://www.gymnasiet.dk/}{Silkeborg Gymnasium}, Denmark}
+	{
 		Studentereksamen (STX) with Physics A, Chemistry A, Mathematics A.\\
 		Master Classes in Mathematics, Physics, and Chemistry. Part of the CanSat competition team.\\
 		GPA:\@ 12.2 / 12.0 (extra credit).
 	}
-	\cvitem{2014 -- 2017}{Academy of Talented Youth}{Denmark}{
+	\cvitem{2014 -- 2017}
+	{\linknoicon{https://talentfuldeunge.dk/}{Academy of Talented Youth}}
+	{Denmark}
+	{
 		Extracurricular organisation providing advanced classes, lectures,
 		and camps for academically gifted students in collaboration with universities
 		and leading companies.\\
-		\\
-		Elected as Student Representative for the Advisory Board of Academy of Talented Youth, where I
-		represented roughly 200 of the region's most talented students and helped set out new initiatives
+		Student Representative to the Advisory Board.
+		Represented ≈200 of the region's most talented students and helped set out new initiatives
 		for the organisation.
 	}
 \end{cvtable}
@@ -381,11 +405,35 @@ internships within FinTech, academia, and industry.
 \cvsection{Awards}
 \cvsectionvspace
 \begin{cvtable}[1.6]
+	\cvitem{2021}
+	{\ordinalnum{1} place in Research Skills Presentation}
+	{\linknoicon{https://www.phy.cam.ac.uk/}{Dept. Physics, Cambridge}}
+	{}
+
+	\cvitem{2017}
+	{Recognition of Extraordinary Community Effort}
+	{\linknoicon{https://www.gymnasiet.dk/}{Silkeborg Gymnasium}, Board}
+	{}
+
+	\cvitem{2017}
+	{Recognition of Extraordinary Academic Achievement}
+	{\linknoicon{https://www.gymnasiet.dk/}{Silkeborg Gymnasium}, Board}
+	{}
+
+	\cvitem{2015}
+	{\ordinalnum{3} place at \linknoicon{https://www.esa.int/Education/CanSat}{European CanSat Competition}}
+	{\linknoicon{https://www.esa.int/}{European Space Agency}}
+	{}
 \end{cvtable}
 
 \cvsection{Other Certifications}
 \cvsectionvspace
 \begin{cvtable}[1.6]
+	\cvitem{2014}
+	{\linknoicon{https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-english-second-language-speaking-endorsement-9-1-0993/}{IGSCE - English As A Second Language}}
+	{\linknoicon{https://www.cambridgeinternational.org/}{Cambridge Examinations}}
+	{A*(a*) grade}
+\end{cvtable}
 \end{cvtable}
 
 \cvsection{Association and Voluntary Work}
@@ -393,11 +441,11 @@ internships within FinTech, academia, and industry.
 \begin{cvtable}[1.6]
 	}
 
-	\cvitem{2015}{Senior Mentor}{The Science Club, Royal Danish Academy of Sciences}{
+	\cvitem{2015}{Senior Mentor}{\linknoicon{https://videnskabsklubben.dk/}{The Science Club, Royal Danish Academy of Sciences}}{
 		Taught primatology to school children in collaboration with Aarhus University
 	}
 
-	\cvitem{2014 -- 2016}{Youth Politician}{Social-Liberal Youth Party of Denmark}{
+	\cvitem{2014 -- 2016}{Youth Politician}{\linknoicon{https://radikalungdom.com/}{Social-Liberal Youth Party of Denmark}}{
 		Active board member in the local organisation. Elected as representative to the National Executive
 		of the Social-Liberal Youth Party of Denmark.
 	}
@@ -407,15 +455,15 @@ internships within FinTech, academia, and industry.
 \cvsection{References}
 \cvsectionvspace
 \begin{cvtable}[1.6]
-	\cvitem{2021}{Research Intern}{University of Cambridge}{
+	\cvitem{2021}{Research Intern}{\linknoicon{https://www.cam.ac.uk/}{University of Cambridge}}{
 		Letter of recommendation available upon request.
 	}
 
-	\cvitem{2020}{Software Engineering Intern}{Intropic Limited}{
+	\cvitem{2020}{Software Engineering Intern}{\linknoicon{https://intropic.io/}{Intropic Limited}}{
 		Letter of recommendation available here: \link{\urlfor{references/intropic.pdf}}{\pdf intropic.pdf}.
 	}
 
-	\cvitem{2018}{Teacher}{Ans Skole}{
+	\cvitem{2018}{Teacher}{\linknoicon{https://ansskole.aula.dk/}{Ans Skole}}{
 		Letter of recommendation available here: \link{\urlfor{references/ans_skole.pdf}}{\pdf ans\_skole.pdf}.
 	}
 
