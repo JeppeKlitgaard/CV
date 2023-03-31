@@ -22,8 +22,10 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: cv
-          path: cv.pdf
+          name: Files
+          path: |
+            cv.pdf
+            documents/*
 
       - name: Release
         uses: softprops/action-gh-release@v1
