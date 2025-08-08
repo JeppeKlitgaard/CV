@@ -81,13 +81,13 @@
 
   == Work Experience
   #make-main-content-block-with-timeline(
-    ([2025], [2023]),
+    ([Present], [2023]),
     "Research & Development Scientist",
     supplement: [#link("https://www.nanonord.dk", "NanoNord A/S")],
     [
       Research and development pertaining to Nuclear Magnetic Resonance (NMR) applied to the
-      #linker("https://nanonord.com/", "Tveskaeg") system. Design and manufacturing of an automated hardware platform mapping the local
-      magnetic field inside $1 "T"$ Halbach array magnet to improve passive shimming outcomes
+      #linker("https://nanonord.com/", "Tveskaeg") system. Design of an automated hardware platform mapping the local
+      magnetic field inside $1 "T"$ Halbach array magnet to improve passive shimming outcomes. Scientific lead for lithium extraction sector and conference speaker at numerous Direct Lithium Extraction (DLE) conferences.
     ]
   )
   #make-main-content-block-with-timeline(
@@ -135,7 +135,7 @@
 
   == Education
   #make-main-content-block-with-timeline(
-    ([2025], [2023]),
+    ([2027], [2025]),
     [MSc Mathematical Modelling\ and Computation],
     supplement: [#link("https://www.dtu.dk", "Technical University of Denmark")],
     [Applied Mathematics with a focus on Scientific Computing and Data Science.],
