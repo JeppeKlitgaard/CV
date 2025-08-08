@@ -86,8 +86,10 @@
     supplement: [#link("https://www.nanonord.dk", "NanoNord A/S")],
     [
       Research and development pertaining to Nuclear Magnetic Resonance (NMR) applied to the
-      #linker("https://nanonord.com/", "Tveskaeg") system. Design of an automated hardware platform mapping the local
-      magnetic field inside $1 "T"$ Halbach array magnet to improve passive shimming outcomes. Scientific lead for lithium extraction sector and conference speaker at numerous Direct Lithium Extraction (DLE) conferences.
+      #linker("https://nanonord.com/", "Tveskaeg") system. Design of platform mapping the local
+      magnetic field inside $1 "T"$ Halbach array magnet to improve passive shimming outcomes.
+      Scientific lead for lithium extraction sector and conference speaker at numerous Direct Lithium Extraction (DLE) conferences.
+      Part time since 2025-02.
     ]
   )
   #make-main-content-block-with-timeline(
