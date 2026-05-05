@@ -82,7 +82,10 @@
     fill: _secondary-accent-color,
   ),
   aside-heading-line-enable: true,
+  aside-heading-line-cap: "butt",
+  aside-heading-line-opposite-cap: "butt",
   aside-heading-line-gap: 10pt,
+  aside-heading-line-opposite-gap: 0pt,
   aside-heading-line-thickness: 1pt,
 
   aside-pill-box-inner: (
