@@ -140,7 +140,10 @@
     ([2027], [2025]),
     [MSc Mathematical Modelling\ and Computation],
     supplement: [#link("https://www.dtu.dk", "Technical University of Denmark")],
-    [Applied Mathematics with a focus on Scientific Computing and Data Science.],
+    [
+      Applied Mathematics with a focus on Scientific Computing and Data Science.
+      - TA in 02613 Python and High Performance Computing (Spring 2026)
+    ],
   )
   #make-main-content-block-with-timeline(
     ([2023], [2019]),
@@ -148,7 +151,7 @@
     supplement: [#link("https://cam.ac.uk", "University of Cambridge")],
     [
       Specialisation in Physics and Mathematics with an emphasis on Computational and Experimental Physics.\
-      Student Representative at Cavendish Laboratory (years 1 — 3).
+      - Student Representative at Cavendish Laboratory (years 1 — 3).
     ]
   )
   #make-main-content-block-with-timeline(
@@ -166,10 +169,9 @@
     "Academy of Talented Youth",
     supplement: [Denmark],
     [
-      #linker("https://talentfuldeunge.dk/", "Extracurricular organisation") providing advanced classes, lectures,
-      and camps for academically gifted students in collaboration with universities
+      #linker("https://talentfuldeunge.dk/", "Extracurricular organisation") that challenges academically gifted students in collaboration with universities
       and leading companies.\
-      Student Representative to the Advisory Board, representing ≈200 talented students.
+      - Representative to the Board, representing ≈200 talented students.
     ]
   )
 ]
